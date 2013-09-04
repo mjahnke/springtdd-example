@@ -32,7 +32,8 @@ public class HelloController {
     @RequestMapping("/sayhello/{name}")
     public String sayhello(final ModelMap map, @PathVariable("name") final String name) {
         map.put("name", name);
-        return "hello";
+        map.put("title", "aus dem controller");
+        return "sayhello/hello";
     }
     
     @RequestMapping("/helloform.html")
