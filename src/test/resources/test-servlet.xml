@@ -17,18 +17,15 @@
     <context:component-scan base-package="de.decoit.springtdd"/>    
     <context:property-placeholder location="classpath:onlineshop.properties"/>
     
-    <!-- Freemarker-Konfiguration -->
-    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-        <property name="templateLoaderPath" value="/WEB-INF/views/"/>
-    </bean>    
-
-    <!-- Freemarker-View-Resolver -->        
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <property name="cache" value="true"/>
-        <property name="prefix" value=""/>
-        <property name="suffix" value=".ftl"/>
-        <property name="exposeSpringMacroHelpers" value="true"/>
-    </bean>   
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+        <property name="prefix">
+            <value>/WEB-INF/views/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean> 
     
     <!-- Unterstützung für I18N -->
     <mvc:interceptors>
