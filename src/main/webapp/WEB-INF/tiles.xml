@@ -16,7 +16,19 @@
     
     <definition name="helloform" extends="base">
         <put-attribute name="body" value="/WEB-INF/views/helloform.jsp" />
-    </definition>    
+    </definition> 
+    
+    <definition name="login" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+    </definition>  
+    
+    <definition name="successLogin" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/successLogin.jsp" />
+    </definition>
+    
+    <definition name="failureLogin" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/failureLogin" />
+    </definition>
     
     <definition name="sayhello/*" extends="base">
         <put-attribute name="title" value="überschrieben" />
